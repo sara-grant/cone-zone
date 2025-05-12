@@ -5,8 +5,18 @@ body {
     background-size:cover;
     animation: fadeIn 0.5s ease-in;
     cursor: url(assets/cursor.png), auto;
+    margin: 0;
 }
 
+.cover {
+    background-color: black;
+    z-index: 100;
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    opacity: 0.5;
+}
 /* main grid */
 
 .grid {
@@ -25,6 +35,8 @@ body {
     padding-top: 3vh;
 }
 
+
+
 .menu-left {
     grid-column: 2;
     grid-row: 2 / 4;
@@ -38,7 +50,7 @@ body {
     display: grid;
     grid-template-columns: subgrid;
     grid-template-rows: 20% 40%;
-    z-index: 1;
+    z-index: 300;
 }
 
 .base-cone {
@@ -57,6 +69,7 @@ body {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
     place-self: center;
+    z-index: 300;
 }
 
 .flavor-container img {
@@ -68,6 +81,7 @@ body {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
     place-self: center;
+    z-index: 300;
 }
 
 .cherry-container img {
@@ -79,6 +93,7 @@ body {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
     place-self: center;
+    z-index: 300;
 }
 
 .toppings-container img {
@@ -101,20 +116,21 @@ body {
     grid-column: 3;
     grid-row: 4;
     justify-self: center;
-    cursor: url(assets/cursor.png), auto;
+    cursor: url(assets/cursor-hover.png), auto;
 }
 
 .clear-btn {
     grid-column: 4;
     grid-row: 4;
     justify-self: center;
+    cursor: url(assets/cursor-hover.png), auto;
 }
 
 
 .finish-btn {
     grid-column: 5;
     grid-row: 4;
-    cursor: url(assets/cursor.png), auto;
+    cursor: url(assets/cursor-hover.png), auto;
 
 }
 
@@ -125,9 +141,12 @@ body {
 
 .menu-right-1 img, .menu-left img, .menu-right-2 img, .finish-btn img, .clear-btn img, .back-btn img{
     width: 28vh;
-    cursor: url(assets/cursor.png), auto;
 
     /* object-fit: cover; */
+}
+
+a {
+    cursor: url(assets/cursor-hover.png), auto;
 }
 
 /* flavor grid */
@@ -228,38 +247,85 @@ body {
 /* finish window */
 
 .finish-window {
-    z-index: 0;
+    z-index: 200;
     padding-top: 10vh;
     transition: opacity 0.5s;
     opacity: 0;
+    display: none;
 }
 
-.finish-window img {
-    width: 0;
-}
 
 .finish-window.appear {
-    grid-column: 1 / 7;
+    animation: fadeIn 0.5s;
+    grid-column: 2 / 6;
     grid-row: 1 / 4;
     opacity: 1;
     justify-self: center;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
+    grid-template-rows: 1fr;
 }
 
-.finish-window.appear img {
+.finishWindowBg {
+    grid-column: 2 / 5;
+    grid-row: 1;
+    align-self: center;
+    justify-content: center;
     width: 125vh;
 }
+
+#correctFinish {
+    display: none;
+}
+
+.finishHome img, .nextLevel img, .again img {
+    width: 100%;
+}
+
+.finishHome {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    justify-content: center;
+    margin-left: 30%;
+    /* margin-right: 15%; */
+    margin-bottom: 10%;
+}
+
+.again {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: end;
+    justify-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10%;
+}
+
+.nextLevel {
+    grid-column: 4;
+    grid-row: 1;
+    align-self: end;
+    justify-content: center;
+    /* margin-left: 15%; */
+    margin-right: 30%;
+    margin-bottom: 10%;
+    display: none;
+}
+
 
 .home-btn {
     z-index: 2;
     transition: opacity 0.5s;
     opacity: 0;
-    
+    z-index: 300;
 }
 
 .make-another-btn {
     z-index: 2;
     transition: opacity 0.7s;
     opacity: 0;
+    z-index: 300;
 }
 
 .home-btn img {
@@ -292,6 +358,238 @@ body {
     width: 100%;
 }
 
+/* timer */
+.timer {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-weight: bold;
+    color: #E85656;
+    font-size: 2em;
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 3;
+    justify-self: center;
+    align-self: center;
+    margin-top: 1em;
+}
+
+.timer-container img {
+    width: 28vh;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.timer-container {
+    grid-column: 1;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+/* pause menu */
+
+
+.pause img {
+    width: 100%;
+    cursor: url(assets/cursor-hover.png), auto;
+}
+
+.seeOrderBtn img {
+    width: 100%;
+    cursor: url(assets/cursor-hover.png), auto;
+}
+.side-btns {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+.unpause {
+    grid-row: 2;
+    grid-column: 1;
+    z-index: 300;
+    align-self: baseline;
+    justify-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    cursor: url(assets/cursor-hover.png), auto;
+}
+
+.unpause img {
+    width: 100%;
+}
+
+.pause-home-btn {
+    grid-row: 3;
+    grid-column: 1;
+    z-index: 400;
+    align-self: baseline;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.pause-home-btn img {
+    width: 100%;
+}
+
+.tutorial-btn {
+    grid-row: 4;
+    grid-column: 1;
+    z-index: 300;
+    align-self: baseline;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.tutorial-btn img {
+    width: 100%;
+    cursor: url(assets/cursor-hover.png), auto;
+}
+
+.pause-menu {
+    grid-column: 2 / 6;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    z-index: 400;
+    display: none;
+}
+
+.pause-menu.appear {
+    display: grid;
+    grid-template-rows: 2.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    place-items: center;
+    row-gap: 5px;
+}
+
+.pause-menu-bg {
+    width: 50vh;
+    grid-row: 1 / 8;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+/* tutorial */
+
+.tutorial {
+    display: none;
+}
+
+.tutorial.appear {
+    grid-column: 2 / 6;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    z-index: 400;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.tutorial-bg {
+    width: 50vh;
+    grid-row: 1 / 6;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+.beginBtn {
+    grid-row: 4 / 6;
+    grid-column: 1;
+    width: 55%;
+    padding-top: 1em;
+    align-self: center;
+    justify-self: center;
+    cursor: url(assets/cursor-hover.png), auto;
+}
+
+.tutBack {
+    grid-row: 4 / 6;
+    grid-column: 1;
+    width: 55%;
+    padding-top: 1em;
+    align-self: center;
+    justify-self: center;
+    cursor: url(assets/cursor-hover.png), auto;
+}
+
+/* order popup */
+.order {
+    display: none;
+}
+
+.order.appear {
+    grid-column: 2 / 6;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    z-index: 400;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.order-bg {
+    width: 50vh;
+    grid-row: 1;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+.order-list {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+.order-list ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-list li {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-weight: bold;
+    font-size: 1.8em;
+    margin: 0;
+    margin-bottom: 1em;
+    color:#f1a5a5;
+    line-height: 1em;
+}
+
+.order-list li em {
+    color:#E85656;
+    font-style: normal;
+}
+
+/* coming soon */
+
+.nextLevelPopup {
+    display: none;
+}
+.nextLevelPopup.appear {
+    grid-column: 2 / 6;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    z-index: 1000;
+    display:block;
+}
+
+.nextLevelPopup img {
+    width: 50vh;
+    grid-row: 1;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+    z-index: 1000;
+}
 
 /* animations */
 

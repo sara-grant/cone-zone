@@ -5,12 +5,55 @@
     <title>Build Zone</title>
     <link rel="stylesheet" href="style2.css">
     <link rel="icon" type="image/x-icon" href="assets/cone-zone-logo.png">
+    <!-- baloo bhai -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="cover"></div>
     <div class="grid">
         <div class="title">
             <img src="assets/build-your-ice-cream.png">
         </div>
+        <div class="timer-container">
+        <div class="timer"></div>
+        <img src="assets/timer-bg.png">
+        </div>
+<!-- tutorial -->
+        <div class="tutorial">
+            <img class="tutorial-bg" src="assets/tutorial-popup.png">
+            <img class="beginBtn" src="assets/begin-btn.png">
+        </div>
+        <div id="tutorialMenu" class="tutorial">
+            <img class="tutorial-bg" src="assets/tutorial-popup.png">
+            <img class="tutBack" src="assets/back-btn.png">
+        </div>
+<!-- order -->
+        <div class="order">
+            <img class="order-bg" src="assets/order-popup.png">
+            <div class="order-list">
+                <ul>
+                    <li id="flavorOutput">Flavor:</li>
+                    <li id="toppingOutput">Topping:</li>
+                    <li id="cherryOutput">Cherry:</li>
+                </ul>
+            </div>
+        </div>
+ <!-- pause menu -->
+        <div class="pause-menu">
+            <a class="pause-home-btn" href="index.html"><img src="assets/home-btn.png"></a>
+            <div class="unpause"><img src="assets/resume-btn.png"></div>
+            <div class="tutorial-btn"><img src="assets/tutorial-btn.png"></div>
+            <img class="pause-menu-bg"src="assets/pause-menu.png">
+        </div>
+    
+    <div class="side-btns">
+        <div class="pause"><img src="assets/pause-btn.png"></div>
+        <div class="seeOrderBtn"><img src="assets/view-order-btn.png"></div>
+        <!-- <div class="tutorial-btn"><img src="assets/tutorial-btn.png"></div> -->
+    </div> 
+<!-- menu grid -->
         <div class="menu-left">
             <img src="assets/flavor-menu.png">
             <div class="flavors">
@@ -53,17 +96,22 @@
         </div>
 
         <div class="finish-window">
-            <img src="assets/finish-window.png">
+            <img class=finishWindowBg src="assets/wrong-finish.png">
+            <img id="correctFinish"class=finishWindowBg src="assets/correct-finish.png">
+            <a class="finishHome" href="index.html"><img src="assets/home-btn.png"></a>
+            <a href="coming-soon.html" class="nextLevel"><img src="assets/next-level-btn.png"></a>
+            <a href="build-zone.html" class="again"><img src="assets/try-again-btn.png"></a>
         </div>
 
-        <div class="home-btn">
+    
+
+        <!-- <div class="home-btn">
             <a href="index.html"><img src="assets/take-me-home.png"></a>
         </div>
         <div class="make-another-btn">
             <a href="build-zone.html"><img src="assets/make-another.png"></a>
-        </div>
+        </div> -->
     </div>
-
 
 
     <script src="script.js"></script>
