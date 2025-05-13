@@ -482,11 +482,12 @@ a {
     grid-row: 2;
     align-self: center;
     justify-self: center;
-    z-index: 400;
+    z-index: 450;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
+
 
 .tutorial-bg {
     width: 50vh;
@@ -500,7 +501,7 @@ a {
     grid-row: 4 / 6;
     grid-column: 1;
     width: 55%;
-    padding-top: 1em;
+    padding-top: 2em;
     align-self: center;
     justify-self: center;
     cursor: url(assets/cursor-hover.png), auto;

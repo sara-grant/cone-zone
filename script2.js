@@ -250,7 +250,7 @@ function timerEnd() {
 let beginBtn = document.querySelector('.beginBtn');
 let tutorialPopup = document.querySelector('.tutorial');
 
-window.addEventListener('load', tutorialAppear);
+// window.addEventListener('load', tutorialAppear);
 beginBtn.addEventListener('click', tutorialBye);
 
 function tutorialAppear() {
@@ -266,7 +266,9 @@ function tutorialBye() {
     enterKey()
 }
 
-// space bar and esc pause
+// space bar and esc keystrokes
+
+window.addEventListener('load', spacePause);
 
 function spacePause() {
 document.addEventListener('keydown', (ev) => {
@@ -276,13 +278,34 @@ document.addEventListener('keydown', (ev) => {
 })
 }
 
+let enterKeystroke = false;
+
+window.addEventListener('load', enterKey);
+
 function enterKey() {
     document.addEventListener('keydown', (ev) => {
-        if (ev.key == "Enter") {
+        if (ev.key == "Enter" && enterKeystroke==false) {
             orderAppear();
+            enterKey2()
+            enterKeystroke = true;
         }
     })
 }
+
+function enterKey2() {
+    console.log(enterKeystroke);
+    
+    document.addEventListener('keydown', (ev) => {
+        if (ev.key == "Enter" && enterKeystroke==true) {
+            exitMenuBye();
+            enterKey()
+            enterKeystroke = false;
+        }
+    })
+    
+} 
+
+
 
 // tutorial from pause menu
 let tutorialBtn = document.querySelector('.tutorial-btn');
@@ -347,6 +370,7 @@ function exitMenuBye() {
     cover.style.display = "none";
     cover.removeEventListener("click", exitMenuBye);
 }
+
 
 // order arrays
 
