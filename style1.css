@@ -72,7 +72,7 @@ html, body {
 }
 
 .flavor-container img {
-    width: 200px;
+    width: 30vh;
     animation: fadeIn 0.2s ease-in;
 }
 
@@ -84,7 +84,7 @@ html, body {
 }
 
 .cherry-container img {
-    width: 200px;
+    width: 30vh;
     animation: fadeIn 0.2s ease-in;
 }
 
@@ -96,7 +96,7 @@ html, body {
 }
 
 .toppings-container img {
-    width: 200px;
+    width: 30vh;
     animation: fadeIn 0.2s ease-in;
 }
 
@@ -445,7 +445,7 @@ a {
     font-family: "Baloo Bhai 2", sans-serif;
     font-weight: bold;
     color: #E85656;
-    font-size: 2em;
+    font-size: 5vh;
     grid-row: 1;
     grid-column: 1;
     z-index: 3;
@@ -642,7 +642,7 @@ a {
 .order-list li {
     font-family: "Baloo Bhai 2", sans-serif;
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 4vh;
     margin: 0;
     margin-bottom: 1em;
     color:#f1a5a5;
