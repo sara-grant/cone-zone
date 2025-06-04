@@ -2,6 +2,7 @@
 let flavorContainer = document.querySelector('.flavor-container');
 let cherryContainer = document.querySelector('.cherry-container');
 let toppingsContainer = document.querySelector('.toppings-container');
+let coneContainer = document.querySelector('.base-cone');
 
 // flavor btns
 
@@ -20,6 +21,10 @@ let cherryNo = document.querySelector('.no-btn');
 let sprinklesBtn = document.querySelector('.sprinkles-btn');
 let chocolateDipBtn = document.querySelector('.chocolate-dip-btn');
 let chocolateChunksBtn = document.querySelector('.chocolate-chunks-btn');
+
+// cone btns
+let cakeConeBtn = document.querySelector('.cake-cone-btn');
+let waffleConeBtn = document.querySelector('.waffle-cone-btn');
 
 // cursor
 
@@ -170,6 +175,27 @@ cherryNo.addEventListener('click', () => {
     cherry2 = false;
 });
 
+// cone
+
+let cakeCone = false;
+let waffleCone = false;
+
+cakeConeBtn.addEventListener('click', ()=>{
+    coneContainer.innerHTML = '<img src="assets/cone.png">'
+    cakeConeBtn.innerHTML = '<img src="assets/cake-cone-btn-active.png">'
+    waffleConeBtn.innerHTML = '<img src="assets/waffle-cone-btn.png">'
+    cakeCone = true;
+    waffleCone = false;
+})
+
+waffleConeBtn.addEventListener('click', ()=>{
+    coneContainer.innerHTML = '<img src="assets/waffle-cone.png">'
+    cakeConeBtn.innerHTML = '<img src="assets/cake-cone-btn.png">'
+    waffleConeBtn.innerHTML = '<img src="assets/waffle-cone-btn-active.png">'
+    cakeCone = false;
+    waffleCone = true;
+})
+
 // finish window
 
 let finishBtn = document.querySelector('.finish-btn');
@@ -192,6 +218,7 @@ function finishBtnFunc() {
     checkFlavor()
     toppingCheck()
     cherryCheck()
+    coneCheck()
     accuracy()
 }
 
@@ -217,7 +244,7 @@ function finishBtnFunc() {
 
 // timer 15sec
 
-const startingTime15 = 8;
+const startingTime15 = 12;
 let time15 = startingTime15;
 
 const timerElm = document.querySelector('.timer');
@@ -269,6 +296,8 @@ function tutorialBye() {
 // space bar and esc keystrokes
 
 // window.addEventListener('load', spacePause);
+
+
 
 function spacePause() {
 document.addEventListener('keydown', (ev) => {
@@ -430,6 +459,23 @@ function randomCherry() {
     console.log(cherry);
 }
 
+// cone
+
+let coneOutput = document.querySelector('#coneOutput');
+let cone = 0;
+
+let coneArray = [
+    "Cake Cone",
+    "Waffle Cone"
+]
+
+function randomCone() {
+    cone = coneArray[Math.floor(Math.random()*coneArray.length)];
+    coneOutput.innerHTML = `<em>Cone:</em> <br> ${cone}`
+
+    console.log(cone);
+}
+
 // flavor accuracy
 
 let flavorVanilla = flavorArray[0];
@@ -503,14 +549,36 @@ function cherryCheck() {
     }
 }
 
+// cone accuracy 
+let coneCakeCone = coneArray[0];
+let coneWaffleCone = coneArray[1];
+
+let coneAccuracy = false;
+function coneCheck() {
+    if(cakeCone && cone == coneCakeCone) {
+        coneAccuracy = true;
+    }
+
+    if(waffleCone && cone == coneWaffleCone) {
+        coneAccuracy = true;
+    }
+
+    if(coneAccuracy) {
+        console.log('cone accurate');
+    }
+}
+
+
+// order accuracy
 let correctFinish = document.querySelector('#correctFinish');
 let nextLevelBtn = document.querySelector('.nextLevel');
 function accuracy() {
-    if(flavorAccuracy && toppingAccuracy && cherryAccuracy) {
+    if(flavorAccuracy && toppingAccuracy && cherryAccuracy && coneAccuracy) {
         correctFinish.style.display="block";
         nextLevelBtn.style.display='block';
     }
 }
+
 
 // debug
 function debug() {
@@ -518,6 +586,7 @@ function debug() {
     randomFlavor();
     randomTopping();
     randomCherry();
+    randomCone()
 }
 
 window.onload = debug();

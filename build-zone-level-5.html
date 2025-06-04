@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Build Zone</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="icon" type="image/x-icon" href="assets/cone-zone-logo.png">
     <!-- baloo bhai -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
     <div class="cover"></div>
     <div class="grid">
         <div class="title">
-            <img src="assets/level-3-banner.png">
+            <img src="assets/level-5-banner.png">
         </div>
         <div class="timer-container">
         <div class="timer"></div>
@@ -22,7 +22,7 @@
         </div>
 <!-- tutorial -->
         <div class="tutorial">
-            <img class="tutorial-bg" src="assets/level-3-popup.png">
+            <img class="tutorial-bg" src="assets/level-5-popup.png">
             <img class="beginBtn" src="assets/begin-btn.png">
         </div>
         <div id="tutorialMenu" class="tutorial">
@@ -34,6 +34,7 @@
             <img class="order-bg" src="assets/order-popup.png">
             <div class="order-list">
                 <ul>
+                    <li id="coneOutput">Cone:</li>
                     <li id="flavorOutput">Flavor:</li>
                     <li id="toppingOutput">Topping:</li>
                     <li id="cherryOutput">Cherry:</li>
@@ -56,16 +57,20 @@
 <!-- menu grid -->
         <div class="menu-left">
             <!-- <div class="flavors"> -->
-                <img id="menu-left-bg" src="assets/flavor-menu.png">
+                <img id="menu-left-bg" src="assets/flavor-menu-expanded.png">
                <div class="vanilla-btn"><img src="assets/vanilla-btn.png"></div>
                <div class="chocolate-btn"> <img src="assets/chocolate-btn.png"></div>
                <div class="strawberry-btn"> <img src="assets/strawberry-btn.png"></div>
                <div class="mint-btn"> <img src="assets/mint-btn.png"></div>
+               <div class="coffee-btn"><img src="assets/coffee-btn.png"></div>
+               <div class="pistachio-btn"><img src="assets/pistachio-btn.png"></div>
+               <div class="lemon-btn"><img src="assets/lemon-btn.png"></div>
+               <div class="raspberry-btn"><img src="assets/raspberry-btn.png"></div>
             <!-- </div> -->
         </div>
 
         <div class="cone">
-            <div class="base-cone"><img src="assets/cone.png"></div>
+            <div class="base-cone"><img src=""></div>
             <div class="flavor-container"></div>
 		    <div class="toppings-container"></div>
 		    <div class="cherry-container"></div>
@@ -88,6 +93,12 @@
             <!-- </div> -->
         </div>
         
+        <div class="cone-menu">
+            <img id="cone-menu-bg" src="assets/cone-type-menu.png">
+            <div class="cake-cone-btn"><img src="assets/cake-cone-btn.png"></div>
+            <div class="waffle-cone-btn"><img src="assets/waffle-cone-btn.png"></div>
+        </div>
+
     <div class="back-btn">
         <a href="build-zone.html"><img src="assets/back-btn.png"></a>
     </div>
@@ -103,8 +114,8 @@
             <img class=finishWindowBg src="assets/wrong-finish.png">
             <img id="correctFinish"class=finishWindowBg src="assets/correct-finish.png">
             <a class="finishHome" href="index.html"><img src="assets/home-btn.png"></a>
-            <a href="build-zone-level-4.html" class="nextLevel"><img src="assets/next-level-btn.png"></a>
-            <a href="build-zone-level-3.html" class="again"><img src="assets/try-again-btn.png"></a>
+            <a href="coming-soon.html" class="nextLevel"><img src="assets/next-level-btn.png"></a>
+            <a href="build-zone-level-4.html" class="again"><img src="assets/try-again-btn.png"></a>
         </div>
 
     
@@ -118,6 +129,6 @@
     </div>
 
 
-    <script src="script3.js"></script>
+    <script src="script5.js"></script>
 </body>
 </html>

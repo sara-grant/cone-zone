@@ -327,6 +327,7 @@ pauseBtn.addEventListener("click", pauseMenuAppear);
 
 function pauseMenuAppear() {
     timer = false;
+    exitMenuBye()
     pauseMenu.classList.add('appear');
     cover.style.display = "block";
     unpauseBtn.style.display = "block";

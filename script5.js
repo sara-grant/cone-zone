@@ -2,6 +2,7 @@
 let flavorContainer = document.querySelector('.flavor-container');
 let cherryContainer = document.querySelector('.cherry-container');
 let toppingsContainer = document.querySelector('.toppings-container');
+let coneContainer = document.querySelector('.base-cone');
 
 // flavor btns
 
@@ -9,6 +10,10 @@ let vanillaBtn = document.querySelector('.vanilla-btn');
 let chocolateBtn = document.querySelector('.chocolate-btn');
 let strawberryBtn = document.querySelector('.strawberry-btn');
 let mintBtn = document.querySelector('.mint-btn');
+let coffeeBtn = document.querySelector('.coffee-btn');
+let pistachioBtn = document.querySelector('.pistachio-btn');
+let lemonBtn = document.querySelector('.lemon-btn');
+let raspberryBtn = document.querySelector('.raspberry-btn');
 
 // cherry btns
 
@@ -20,6 +25,10 @@ let cherryNo = document.querySelector('.no-btn');
 let sprinklesBtn = document.querySelector('.sprinkles-btn');
 let chocolateDipBtn = document.querySelector('.chocolate-dip-btn');
 let chocolateChunksBtn = document.querySelector('.chocolate-chunks-btn');
+
+// cone btns
+let cakeConeBtn = document.querySelector('.cake-cone-btn');
+let waffleConeBtn = document.querySelector('.waffle-cone-btn');
 
 // cursor
 
@@ -47,12 +56,20 @@ let vanilla = false;
 let chocolate = false;
 let strawberry = false;
 let mint = false;
+let coffee = false;
+let pistachio = false;
+let lemon = false;
+let raspberry = false;
 
 let flavorSelectedArray = [
     vanilla,
     chocolate,
     strawberry,
-    mint
+    mint,
+    coffee,
+    pistachio,
+    lemon,
+    raspberry
 ]
 
 vanillaBtn.addEventListener('click', chooseVanilla);
@@ -64,10 +81,18 @@ function chooseVanilla() {
     chocolateBtn.innerHTML = '<img src="assets/chocolate-btn.png">';
     strawberryBtn.innerHTML = '<img src="assets/strawberry-btn.png">';
     mintBtn.innerHTML = '<img src="assets/mint-btn.png">';
+    coffeeBtn.innerHTML = '<img src="assets/coffee-btn.png">';
+    pistachioBtn.innerHTML = '<img src="assets/pistachio-btn.png">';
+    lemonBtn.innerHTML = '<img src="assets/lemon-btn.png">';
+    raspberryBtn.innerHTML = '<img src="assets/raspberry-btn.png">';
     vanilla = true;
     chocolate = false;
     strawberry = false;
     mint = false;
+    coffee = false;
+    pistachio = false;
+    lemon = false;
+    raspberry = false;
     console.log('vanilla has been chosen');
 }
 
@@ -80,10 +105,18 @@ function chooseChocolate() {
     vanillaBtn.innerHTML = '<img src="assets/vanilla-btn.png">';
     strawberryBtn.innerHTML = '<img src="assets/strawberry-btn.png">';
     mintBtn.innerHTML = '<img src="assets/mint-btn.png">';
+    coffeeBtn.innerHTML = '<img src="assets/coffee-btn.png">';
+    pistachioBtn.innerHTML = '<img src="assets/pistachio-btn.png">';
+    lemonBtn.innerHTML = '<img src="assets/lemon-btn.png">';
+    raspberryBtn.innerHTML = '<img src="assets/raspberry-btn.png">';
     chocolate = true;
     vanilla = false;
     strawberry = false;
     mint = false;
+    coffee = false;
+    pistachio = false;
+    lemon = false;
+    raspberry = false;
 }
 
 strawberryBtn.addEventListener('click', chooseStrawberry);
@@ -95,10 +128,18 @@ function chooseStrawberry() {
     vanillaBtn.innerHTML = '<img src="assets/vanilla-btn.png">';
     chocolateBtn.innerHTML = '<img src="assets/chocolate-btn.png">';
     mintBtn.innerHTML = '<img src="assets/mint-btn.png">';
+    coffeeBtn.innerHTML = '<img src="assets/coffee-btn.png">';
+    pistachioBtn.innerHTML = '<img src="assets/pistachio-btn.png">';
+    lemonBtn.innerHTML = '<img src="assets/lemon-btn.png">';
+    raspberryBtn.innerHTML = '<img src="assets/raspberry-btn.png">';
     strawberry = true;
     vanilla = false;
     chocolate = false;
     mint = false;
+    coffee = false;
+    pistachio = false;
+    lemon = false;
+    raspberry = false;
 }
 
 mintBtn.addEventListener('click', chooseMint)
@@ -110,10 +151,110 @@ function chooseMint() {
     vanillaBtn.innerHTML = '<img src="assets/vanilla-btn.png">';
     chocolateBtn.innerHTML = '<img src="assets/chocolate-btn.png">';
     strawberryBtn.innerHTML = '<img src="assets/strawberry-btn.png">';
+    coffeeBtn.innerHTML = '<img src="assets/coffee-btn.png">';
+    pistachioBtn.innerHTML = '<img src="assets/pistachio-btn.png">';
+    lemonBtn.innerHTML = '<img src="assets/lemon-btn.png">';
+    raspberryBtn.innerHTML = '<img src="assets/raspberry-btn.png">';
     mint = true;
     vanilla = false;
     chocolate = false;
     strawberry = false;
+    coffee = false;
+    pistachio = false;
+    lemon = false;
+    raspberry = false;
+}
+
+coffeeBtn.addEventListener('click', chooseCoffee)
+
+function chooseCoffee() {
+    flavorContainer.innerHTML = '<img src="assets/coffee-scoop.png">';
+    body.style.cursor = 'url(assets/cursor-coffee.png), auto';
+    coffeeBtn.innerHTML = '<img src="assets/coffee-btn-active.png">';
+    mintBtn.innerHTML = '<img src="assets/mint-btn.png">';
+    vanillaBtn.innerHTML = '<img src="assets/vanilla-btn.png">';
+    chocolateBtn.innerHTML = '<img src="assets/chocolate-btn.png">';
+    strawberryBtn.innerHTML = '<img src="assets/strawberry-btn.png">';
+    pistachioBtn.innerHTML = '<img src="assets/pistachio-btn.png">';
+    lemonBtn.innerHTML = '<img src="assets/lemon-btn.png">';
+    raspberryBtn.innerHTML = '<img src="assets/raspberry-btn.png">';
+    mint = false;
+    vanilla = false;
+    chocolate = false;
+    strawberry = false;
+    coffee = true;
+    pistachio = false;
+    lemon = false;
+    raspberry = false;
+}
+
+pistachioBtn.addEventListener('click', choosePistachio)
+
+function choosePistachio() {
+    flavorContainer.innerHTML = '<img src="assets/pistachio-scoop.png">';
+    body.style.cursor = 'url(assets/cursor-pistachio.png), auto';
+    pistachioBtn.innerHTML = '<img src="assets/pistachio-btn-active.png">';
+    coffeeBtn.innerHTML = '<img src="assets/coffee-btn.png">';
+    mintBtn.innerHTML = '<img src="assets/mint-btn.png">';
+    vanillaBtn.innerHTML = '<img src="assets/vanilla-btn.png">';
+    chocolateBtn.innerHTML = '<img src="assets/chocolate-btn.png">';
+    strawberryBtn.innerHTML = '<img src="assets/strawberry-btn.png">';
+    lemonBtn.innerHTML = '<img src="assets/lemon-btn.png">';
+    raspberryBtn.innerHTML = '<img src="assets/raspberry-btn.png">';
+    mint = false;
+    vanilla = false;
+    chocolate = false;
+    strawberry = false;
+    coffee = false;
+    pistachio = true;
+    lemon = false;
+    raspberry = false;
+}
+
+lemonBtn.addEventListener('click', chooseLemon);
+
+function chooseLemon() {
+    flavorContainer.innerHTML = '<img src="assets/lemon-scoop.png">';
+    body.style.cursor = 'url(assets/cursor-lemon.png), auto';
+    lemonBtn.innerHTML = '<img src="assets/lemon-btn-active.png">';
+    pistachioBtn.innerHTML = '<img src="assets/pistachio-btn.png">';
+    coffeeBtn.innerHTML = '<img src="assets/coffee-btn.png">';
+    mintBtn.innerHTML = '<img src="assets/mint-btn.png">';
+    vanillaBtn.innerHTML = '<img src="assets/vanilla-btn.png">';
+    chocolateBtn.innerHTML = '<img src="assets/chocolate-btn.png">';
+    strawberryBtn.innerHTML = '<img src="assets/strawberry-btn.png">';
+    raspberryBtn.innerHTML = '<img src="assets/raspberry-btn.png">';
+    mint = false;
+    vanilla = false;
+    chocolate = false;
+    strawberry = false;
+    coffee = false;
+    pistachio = false;
+    lemon = true;
+    raspberry = false;
+}
+
+raspberryBtn.addEventListener('click', chooseRaspberry);
+
+function chooseRaspberry() {
+    flavorContainer.innerHTML = '<img src="assets/rasberry-scoop.png">';
+    body.style.cursor = 'url(assets/cursor-raspberry.png), auto';
+    raspberryBtn.innerHTML = '<img src="assets/raspberry-btn-active.png">';
+    lemonBtn.innerHTML = '<img src="assets/lemon-btn.png">';
+    pistachioBtn.innerHTML = '<img src="assets/pistachio-btn.png">';
+    coffeeBtn.innerHTML = '<img src="assets/coffee-btn.png">';
+    mintBtn.innerHTML = '<img src="assets/mint-btn.png">';
+    vanillaBtn.innerHTML = '<img src="assets/vanilla-btn.png">';
+    chocolateBtn.innerHTML = '<img src="assets/chocolate-btn.png">';
+    strawberryBtn.innerHTML = '<img src="assets/strawberry-btn.png">';
+    mint = false;
+    vanilla = false;
+    chocolate = false;
+    strawberry = false;
+    coffee = false;
+    pistachio = false;
+    lemon = false;
+    raspberry = true;
 }
 
 // toppings 
@@ -170,6 +311,27 @@ cherryNo.addEventListener('click', () => {
     cherry2 = false;
 });
 
+// cone
+
+let cakeCone = false;
+let waffleCone = false;
+
+cakeConeBtn.addEventListener('click', ()=>{
+    coneContainer.innerHTML = '<img src="assets/cone.png">'
+    cakeConeBtn.innerHTML = '<img src="assets/cake-cone-btn-active.png">'
+    waffleConeBtn.innerHTML = '<img src="assets/waffle-cone-btn.png">'
+    cakeCone = true;
+    waffleCone = false;
+})
+
+waffleConeBtn.addEventListener('click', ()=>{
+    coneContainer.innerHTML = '<img src="assets/waffle-cone.png">'
+    cakeConeBtn.innerHTML = '<img src="assets/cake-cone-btn.png">'
+    waffleConeBtn.innerHTML = '<img src="assets/waffle-cone-btn-active.png">'
+    cakeCone = false;
+    waffleCone = true;
+})
+
 // finish window
 
 let finishBtn = document.querySelector('.finish-btn');
@@ -192,6 +354,7 @@ function finishBtnFunc() {
     checkFlavor()
     toppingCheck()
     cherryCheck()
+    coneCheck()
     accuracy()
 }
 
@@ -217,7 +380,7 @@ function finishBtnFunc() {
 
 // timer 15sec
 
-const startingTime15 = 8;
+const startingTime15 = 12;
 let time15 = startingTime15;
 
 const timerElm = document.querySelector('.timer');
@@ -269,6 +432,8 @@ function tutorialBye() {
 // space bar and esc keystrokes
 
 // window.addEventListener('load', spacePause);
+
+
 
 function spacePause() {
 document.addEventListener('keydown', (ev) => {
@@ -384,7 +549,11 @@ let flavorArray = [
     "Vanilla",
     "Chocolate",
     "Strawberry",
-    "Mint"
+    "Mint",
+    "Coffee",
+    "Pistachio",
+    "Lemon sorbet",
+    "Raspberry sorbet"
 ]
 
 function randomFlavor() {
@@ -430,12 +599,33 @@ function randomCherry() {
     console.log(cherry);
 }
 
+// cone
+
+let coneOutput = document.querySelector('#coneOutput');
+let cone = 0;
+
+let coneArray = [
+    "Cake Cone",
+    "Waffle Cone"
+]
+
+function randomCone() {
+    cone = coneArray[Math.floor(Math.random()*coneArray.length)];
+    coneOutput.innerHTML = `<em>Cone:</em> <br> ${cone}`
+
+    console.log(cone);
+}
+
 // flavor accuracy
 
 let flavorVanilla = flavorArray[0];
 let flavorChocolate = flavorArray[1];
 let flavorStrawberry = flavorArray[2];
 let flavorMint = flavorArray[3];
+let flavorCoffee = flavorArray[4];
+let flavorPistachio = flavorArray[5];
+let flavorLemon = flavorArray[6];
+let flavorRaspberry = flavorArray[7];
 
 let flavorAccuracy = false;
 
@@ -452,7 +642,18 @@ function checkFlavor() {
     if(mint && flavor == flavorMint) {
         flavorAccuracy = true;
     }
-
+    if(coffee && flavor == flavorCoffee) {
+        flavorAccuracy = true;
+    }
+    if(pistachio && flavor == flavorPistachio) {
+        flavorAccuracy = true;
+    }
+    if(lemon && flavor == flavorLemon) {
+        flavorAccuracy = true;
+    }
+    if(raspberry && flavor == flavorRaspberry) {
+        flavorAccuracy = true;
+    }
 
     if(flavorAccuracy) {
         console.log('flavors accurate');
@@ -503,14 +704,36 @@ function cherryCheck() {
     }
 }
 
+// cone accuracy 
+let coneCakeCone = coneArray[0];
+let coneWaffleCone = coneArray[1];
+
+let coneAccuracy = false;
+function coneCheck() {
+    if(cakeCone && cone == coneCakeCone) {
+        coneAccuracy = true;
+    }
+
+    if(waffleCone && cone == coneWaffleCone) {
+        coneAccuracy = true;
+    }
+
+    if(coneAccuracy) {
+        console.log('cone accurate');
+    }
+}
+
+
+// order accuracy
 let correctFinish = document.querySelector('#correctFinish');
 let nextLevelBtn = document.querySelector('.nextLevel');
 function accuracy() {
-    if(flavorAccuracy && toppingAccuracy && cherryAccuracy) {
+    if(flavorAccuracy && toppingAccuracy && cherryAccuracy && coneAccuracy) {
         correctFinish.style.display="block";
         nextLevelBtn.style.display='block';
     }
 }
+
 
 // debug
 function debug() {
@@ -518,6 +741,7 @@ function debug() {
     randomFlavor();
     randomTopping();
     randomCherry();
+    randomCone()
 }
 
 window.onload = debug();
