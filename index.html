@@ -13,9 +13,23 @@
         </div>
         <img id="mobile" src="assets/mobile-coming-soon-popup.png">
         <div class="index-btn">
-            <a href="build-zone.html"><img src="assets/lets-make-ice-cream-btn.png"></a>
+            <a id="begin" href="build-zone.html"><img src="assets/lets-make-ice-cream-btn.png"></a>
         </div>
     </div>
-    <div class="beta">beta version 0.0.6</div>
+    <div class="beta">beta version 0.0.7</div>
+
+    <script>
+        let start = new Audio('./sounds/begin.mp3');
+        let beginBtn = document.querySelector('#begin');
+        let music = new Audio('./sounds/index-music.mp3');
+
+        beginBtn.addEventListener('click', () => {
+            start.play();
+        })
+        window.addEventListener('mouseover', () => {
+            music.play();
+        })
+
+    </script>
 </body>
 </html>

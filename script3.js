@@ -335,6 +335,7 @@ function pauseMenuAppear() {
     pauseMenu.classList.add('appear');
     cover.style.display = "block";
     unpauseBtn.style.display = "block";
+    bgMusic.pause();
 }
 
 
@@ -344,6 +345,7 @@ unpauseBtn.addEventListener("click", () => {
     pauseMenu.classList.remove('appear');
     cover.style.display = "none";
     unpauseBtn.style.display = "none";
+    music = true;
 })
 
 // order popup
@@ -357,6 +359,7 @@ function orderAppear() {
     orderMenu.classList.add('appear');
     cover.style.display = "block";
     exitMenu()
+    orderSound.play();
 }
 
 function exitMenu() {
@@ -509,7 +512,42 @@ function accuracy() {
     if(flavorAccuracy && toppingAccuracy && cherryAccuracy) {
         correctFinish.style.display="block";
         nextLevelBtn.style.display='block';
+        correctSound.play();
+    } else {
+        failSound.play();
+        music = false;
+        stopMusic();
     }
+}
+// sound
+
+let clickSound = new Audio('./sounds/click.mp3');
+let correctSound = new Audio('./sounds/yay.mp3');
+let bgMusic = new Audio('./sounds/bg-music.mp3');
+let failSound = new Audio('./sounds/fail.mp3');
+let music = true;
+let orderSound = new Audio('./sounds/order.mp3');
+
+
+window.addEventListener('click', () => {
+    clickSound.play();
+    if (music == true) {
+        startMusic();
+    }
+})
+window.addEventListener('mouseover', () => {
+    if (music == true) {
+        startMusic();
+    }
+})
+function stopMusic() {
+    bgMusic.pause();
+    console.log('music stop');
+}
+
+function startMusic() {
+    bgMusic.play();
+    music = false;
 }
 
 // debug
